@@ -1,0 +1,1299 @@
+{
+  "meta": {
+    "compiled": "19 Sep 2026",
+    "note": "UK MND / ALS studies compiled by hand from the MND Clinical Studies Group list, MND Association trials pages, ClinicalTrials.gov, ISRCTN and Be Part of Research. Edit this file to update the app — see how-to-update.md."
+  },
+  "_criteriaHelp": {
+    "check": "One of: age, months, monthsInfo, fvc, nivAllow, nivRequire, gene, riluzole, always, unknown",
+    "age": "{ check: 'age', min: 18, max: 80 }",
+    "months": "{ check: 'months', max: 36 } — months since first symptoms",
+    "monthsInfo": "{ check: 'monthsInfo' } — always met, just states the figure",
+    "fvc": "{ check: 'fvc', min: 60 } — unknown if no FVC recorded",
+    "nivAllow": "{ check: 'nivAllow', allow: ['none','night'] } — met when his NIV use is in the list",
+    "nivRequire": "{ check: 'nivRequire' } — met only when NIV is in use",
+    "gene": "{ check: 'gene', gene: 'fus' } — met with that variant, unknown if untested, unmet otherwise",
+    "riluzole": "{ check: 'riluzole' } — always met, notes whether he takes it",
+    "always": "{ check: 'always', note: 'recorded as ALS' }",
+    "unknown": "{ check: 'unknown', note: 'only his team can confirm this' }",
+    "overrides": "Any rule may add metNote / unmetNote / unknownNote to replace the default wording.",
+    "blockedShort": "Optional short phrase used when this criterion is the reason a study doesn't fit, e.g. 'needs a FUS gene variant'. Keep proper names capitalised."
+  },
+  "studies": [
+    {
+      "id": "experts",
+      "name": "EXPERTS-ALS",
+      "kicker": "Drug trial · platform · no placebo",
+      "type": "drug",
+      "phase": "Pre-trial platform",
+      "blurb": "Screens candidate drugs quickly by measuring neurofilament light chain in blood. Currently testing metformin, nifedipine and ropinirole, with neflamapimod and smilagenin announced for later arms. Everyone who joins receives a drug. A further drug, RT1999, is expected to be added to the platform by the end of 2026.",
+      "plain": "In plain terms: these are existing drugs, already licensed for other conditions, being re-tested in MND. The trial doesn't measure whether people feel better — it measures whether a protein in the blood called neurofilament light, which rises as nerve cells are damaged, falls while the drug is taken. That makes it a fast screen rather than proof of benefit: a positive result means the drug earns a bigger trial, not that it slows the disease. Most drugs tested this way do not go forward.",
+      "placeboLabel": "No placebo",
+      "site": "Oxford (John Radcliffe)",
+      "miles": 45,
+      "burden": "6 visits over 6 months, blood samples at each",
+      "apply": "Rolling — referral through his neurology team",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/experts-als",
+      "tlNote": "RT1999 arm due late 2026",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · referral any time · 17 UK sites",
+      "criteria": [
+        {
+          "text": "Aged 18–80",
+          "check": "age",
+          "min": 18,
+          "max": 80,
+          "blockedShort": "outside the age range"
+        },
+        {
+          "text": "Diagnosis of ALS",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "Within 3 years of first symptoms",
+          "check": "months",
+          "max": 36,
+          "blockedShort": "beyond the 3-year window"
+        },
+        {
+          "text": "Riluzole allowed if the dose is stable",
+          "check": "riluzole"
+        },
+        {
+          "text": "Respiratory function above the trial threshold",
+          "check": "fvc",
+          "min": 50,
+          "unknownNote": "no recent FVC on record — the clinic will have one"
+        },
+        {
+          "text": "Under the care of a participating centre",
+          "check": "unknown",
+          "note": "only his team can confirm this"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "EXPERTS-ALS: how to take part",
+          "url": "https://www.experts-als.uk/get-involved/plwals"
+        },
+        {
+          "label": "Email the study team",
+          "url": "mailto:experts-als@sheffield.ac.uk"
+        },
+        {
+          "label": "Recruiting sites and lead doctors",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/experts-als"
+        }
+      ]
+    },
+    {
+      "id": "smart",
+      "name": "MND-SMART",
+      "kicker": "Drug trial · platform · placebo-controlled",
+      "type": "drug",
+      "phase": "Phase 2/3",
+      "blurb": "Adaptive platform run from Edinburgh. Amantadine was discontinued in March 2026 after showing no benefit, so tacrolimus is now the only active arm. A further drug is expected to be added later in 2026.",
+      "plain": "In plain terms: tacrolimus is an immune-damping drug used after transplants. The theory is that some of the nerve damage in MND is driven by the body's own immune activity, so quietening it might slow the loss of function. This is a proper efficacy trial with a placebo group, so it can genuinely detect a slowing — but a realistic hope is a modest change in the rate of decline, not a reversal. With amantadine now dropped, roughly half of new participants will receive placebo rather than tacrolimus.",
+      "placeboLabel": "About half receive placebo",
+      "site": "Southampton",
+      "miles": 95,
+      "burden": "Monthly contact, mostly remote after the first visits",
+      "apply": "Rolling — referral through his neurology team, but you can register interest yourselves first",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-smart",
+      "tlNote": "Tacrolimus arm only",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · adaptive platform",
+      "criteria": [
+        {
+          "text": "Aged 18 or over",
+          "check": "age",
+          "min": 18
+        },
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No limit on time since diagnosis",
+          "check": "monthsInfo",
+          "metSuffix": ", no bar"
+        },
+        {
+          "text": "Not dependent on ventilation for most of the day",
+          "check": "nivAllow",
+          "allow": [
+            "none",
+            "night"
+          ]
+        },
+        {
+          "text": "Riluzole permitted",
+          "check": "always",
+          "note": "no conflict"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Register your interest with MND-SMART",
+          "url": "https://mnd-smart.org/contact/register-interest"
+        },
+        {
+          "label": "Which trial centres are open",
+          "url": "https://mnd-smart.org/about/trial-centres"
+        },
+        {
+          "label": "Participant FAQs",
+          "url": "https://mnd-smart.org/about/participant-faqs"
+        }
+      ]
+    },
+    {
+      "id": "prevails",
+      "name": "PREVAiLS · pridopidine",
+      "kicker": "Drug trial · placebo-controlled",
+      "type": "drug",
+      "phase": "Phase 3",
+      "blurb": "Confirmatory phase 3 of pridopidine, and the only phase 3 MND trial recruiting anywhere. All three UK sites are now open: King's College Hospital, Queen Square in London, and Royal Stoke.",
+      "plain": "In plain terms: pridopidine acts on the sigma-1 receptor, a switch inside nerve cells that helps them cope with stress and keep their long fibres healthy. An earlier trial missed its main target overall but hinted at benefit in people early in the disease and not yet using breathing support — which is who this trial is aimed at. Best case is a slower decline over six months; the honest expectation is uncertain.",
+      "placeboLabel": "Some receive placebo",
+      "site": "King's College Hospital and Queen Square (London), Royal Stoke",
+      "miles": 100,
+      "burden": "Clinic visits every 4 weeks, breathing tests at each",
+      "apply": "Closes 31 Oct 2026 — referral needed by early September",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/prevails",
+      "tlNote": "Recruiting · three UK sites open",
+      "barStart": 0,
+      "barWidth": 33,
+      "barLabel": "Recruiting now · UK sites open",
+      "criteria": [
+        {
+          "text": "Aged 18–75",
+          "check": "age",
+          "min": 18,
+          "max": 75,
+          "blockedShort": "outside the age range"
+        },
+        {
+          "text": "Within 24 months of first symptoms",
+          "check": "months",
+          "max": 24,
+          "blockedShort": "beyond the 24-month window"
+        },
+        {
+          "text": "FVC 60% or above",
+          "check": "fvc",
+          "min": 60,
+          "unknownNote": "no recent FVC on record"
+        },
+        {
+          "text": "No non-invasive ventilation in use",
+          "check": "nivAllow",
+          "allow": [
+            "none"
+          ],
+          "blockedShort": "not open to people already using NIV"
+        },
+        {
+          "text": "Exact respiratory and ALSFRS-R thresholds",
+          "check": "unknown",
+          "note": "published only in the full protocol"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "PREVAiLS registry record — UK site list, NCT07322003",
+          "url": "https://clinicaltrials.gov/study/NCT07322003"
+        },
+        {
+          "label": "MND Association PREVAiLS page",
+          "url": "https://www.mndassociation.org/research/clinical-trials/treatment-trials/pridopidine-prevails"
+        },
+        {
+          "label": "Prilenia medical information — MedInfo@prilenia.com",
+          "url": "mailto:MedInfo@prilenia.com"
+        }
+      ],
+      "applyGuide": {
+        "order": 1,
+        "statusLine": "Recruiting in the UK now — all three UK sites open",
+        "statusTone": "open",
+        "reminder": "A tablet, taken twice a day for 48 weeks, tested against a placebo. Pridopidine acts on the sigma-1 receptor, a switch inside nerve cells that helps them cope with stress. An earlier trial missed its overall target but hinted at benefit in people early in the disease. This is the confirmatory version of that finding, and it is the only phase 3 MND trial recruiting anywhere at the moment.",
+        "fitNote": "The honest read: this one is aimed at people early in the disease and progressing quickly. Time since first symptoms is the criterion most likely to rule him out, and he is close to the upper age limit of 75. Worth asking, not worth assuming.",
+        "sections": [
+          {
+            "label": "Where",
+            "lines": [
+              "King's College Hospital, London — about 100 miles, direct train to Denmark Hill.",
+              "MND Centre, Queen Square Institute of Neurology, London — about 105 miles, and the site with the deepest MND trial experience in the country.",
+              "Royal Stoke University Hospital, Stoke-on-Trent — about 110 miles, roughly two hours by car.",
+              "All three changed from in set-up to recruiting over the summer. Stoke is the easiest drive; the London sites are easier by train."
+            ]
+          },
+          {
+            "label": "What it involves",
+            "lines": [
+              "Tablets twice a day at home for 48 weeks — no injections or infusions.",
+              "Clinic visits roughly every four weeks, with breathing tests (vital capacity) and the ALSFRS-R function questionnaire at each.",
+              "Randomised: he could receive pridopidine or a placebo, and neither he nor the team would know which.",
+              "There is an open-label extension — everyone who completes the 48 weeks is offered the real drug afterwards, including those who had placebo."
+            ]
+          },
+          {
+            "label": "What they are looking for",
+            "lines": [
+              "Aged 18–75. He turned 75 on 13 September, so he is still inside the limit — but only until his next birthday, and screening takes weeks.",
+              "Definite or probable ALS on the El Escorial criteria.",
+              "Early in the disease and progressing quickly — the subgroup this trial is built on was within 18 months of first symptoms.",
+              "Vital capacity of about 60% or above, and not already on non-invasive ventilation.",
+              "Time since onset and his overnight NIV are the two likely obstacles. Only the site team can rule either way."
+            ]
+          }
+        ],
+        "steps": [
+          "Ring or email all three sites this week rather than picking one. They screen independently and one may have a slot when another does not.",
+          "Ask his neurologist to send a referral the same day. A referral from his own team moves faster than a self-approach, but do not wait for it before making the call.",
+          "Ask the two blocking questions on the phone before travelling anywhere: does overnight NIV exclude him, and how is the time-since-onset window measured. Both can be answered in minutes.",
+          "Flag his age. He is 75 now — say so up front so nobody discovers it at screening and wastes three weeks.",
+          "If invited, screening is one longer visit: breathing tests, bloods, ECG and the function questionnaire."
+        ],
+        "timing": "Recruiting now, and the age limit makes this urgent — 500 places globally, all three UK sites open, and his eligibility window closes on his 76th birthday. This is the one to chase first.",
+        "applyLinks": [
+          {
+            "label": "PREVAiLS registry record — UK site list, NCT07322003",
+            "url": "https://clinicaltrials.gov/study/NCT07322003"
+          },
+          {
+            "label": "MND Association PREVAiLS page",
+            "url": "https://www.mndassociation.org/research/clinical-trials/treatment-trials/pridopidine-prevails"
+          },
+          {
+            "label": "Prilenia medical information — MedInfo@prilenia.com",
+            "url": "mailto:MedInfo@prilenia.com"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fusion",
+      "name": "FUSION · ulefnersen",
+      "kicker": "Gene-specific drug trial",
+      "type": "drug",
+      "phase": "Phase 3",
+      "blurb": "For people with a FUS gene fault only. Not listed by the UK Clinical Studies Group, so any UK access would be through a genetics centre rather than a standard trial referral.",
+      "plain": "In plain terms: this is the most targeted kind of treatment available in MND. Where a FUS gene fault is the cause, the gene issues a damaging instruction; ulefnersen is designed to silence that instruction before the harmful protein is made. Individual patients treated early have shown striking stabilisation, so expectations here are higher than for most trials — but it only applies to the small number of people whose disease is caused by that gene.",
+      "placeboLabel": "Some receive placebo",
+      "site": "London (UCLH)",
+      "miles": 98,
+      "burden": "Lumbar punctures every few weeks",
+      "apply": "Referral via a specialist genetic MND clinic",
+      "url": "https://clinicaltrials.gov/study/NCT04768972",
+      "tlNote": "FUS gene only",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · FUS gene only",
+      "criteria": [
+        {
+          "text": "Confirmed change in the FUS gene",
+          "check": "gene",
+          "gene": "fus",
+          "blockedShort": "needs a FUS gene variant"
+        },
+        {
+          "text": "Aged 12 or over",
+          "check": "age",
+          "min": 12
+        },
+        {
+          "text": "Able to attend a specialist centre for lumbar punctures",
+          "check": "unknown",
+          "note": "depends on travel and his wishes"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Ulefnersen (FUS) registry entry",
+          "url": "https://clinicaltrials.gov/study/NCT04768972"
+        },
+        {
+          "label": "Inherited MND — UK genetic clinics",
+          "url": "https://www.mndcsg.org.uk/patient-resources/inherited-forms-of-mnd"
+        }
+      ]
+    },
+    {
+      "id": "tofersen",
+      "name": "Tofersen early access",
+      "kicker": "Early access programme · SOD1 only",
+      "type": "eap",
+      "phase": "Early access",
+      "blurb": "Free-of-charge access to tofersen for the roughly 2% of people whose MND is caused by a fault in the SOD1 gene, while NHS commissioning is decided. Capacity depends on the care centre.",
+      "plain": "In plain terms: the same silencing approach as ulefnersen, but for the SOD1 gene. Tofersen lowers the harmful SOD1 protein and reduced neurofilament levels in trials; benefit to function appeared slowly and was clearest in people treated early. It is injected into the spine monthly, indefinitely. It is not a cure and does not recover function already lost.",
+      "placeboLabel": "Not a trial — everyone treated",
+      "site": "Care-centre dependent",
+      "miles": null,
+      "burden": "Monthly intrathecal injections",
+      "apply": "Through an MND care centre able to deliver it",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/tofersen-eap",
+      "tlNote": "SOD1 only · early access",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Ongoing · SOD1 gene only",
+      "criteria": [
+        {
+          "text": "Confirmed change in the SOD1 gene",
+          "check": "gene",
+          "gene": "sod1",
+          "blockedShort": "needs an SOD1 gene variant"
+        },
+        {
+          "text": "Care centre with capacity to deliver it",
+          "check": "unknown",
+          "note": "varies by centre"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Tofersen early access programme",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/tofersen-eap"
+        },
+        {
+          "label": "Find an MND care centre",
+          "url": "https://www.mndassociation.org/support-and-information/our-services/mnd-care-centres-and-networks"
+        }
+      ]
+    },
+    {
+      "id": "function",
+      "name": "FUNCtion ALS · TRCN-1023",
+      "kicker": "Drug trial · in set-up",
+      "type": "drug",
+      "phase": "Phase 1/2",
+      "status": "setup",
+      "blurb": "Registry record is now live (NCT07674667) and the trial is enrolling in Europe, but only one site is listed so far and it is not in the UK. UK and Netherlands authorisation is in place; UK, US, Canadian and German sites are expected to follow during 2026.",
+      "plain": "In plain terms: an early-phase study, so its purpose is to establish safety and the right dose rather than to show benefit. Taking part is a contribution to the science more than a treatment plan.",
+      "placeboLabel": "To be confirmed",
+      "site": "Sites to be confirmed",
+      "miles": null,
+      "burden": "To be confirmed",
+      "apply": "Not yet open",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/function-als",
+      "windowLabel": "Expected to open Dec 2026",
+      "tlNote": "Enrolling in Europe · UK sites pending",
+      "barStart": 42,
+      "barWidth": 58,
+      "barLabel": "Expected to open Dec 2026",
+      "criteria": [],
+      "applyLinks": [
+        {
+          "label": "FUNCtion ALS registry record, NCT07674667",
+          "url": "https://clinicaltrials.gov/study/NCT07674667"
+        },
+        {
+          "label": "FUNCtion ALS study page (CSG)",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/function-als"
+        },
+        {
+          "label": "Register with TiM-R",
+          "url": "https://www.mndassociation.org/research/get-involved-in-research/take-part-in-research/tim-r-remote-platform-mnd-research"
+        }
+      ],
+      "applyGuide": {
+        "order": 2,
+        "statusLine": "Enrolling in Europe — UK authorised, no UK site listed yet",
+        "statusTone": "setup",
+        "reminder": "A single injection into the fluid around the spine, tested against a placebo, with 24 weeks of follow-up. TRCN-1023 is an antisense drug designed to restore a protein called UNC13A, which stops working properly in roughly 97% of people with MND. The science behind it came out of UCL. It is an early-phase trial, so the purpose is safety and dose-finding rather than proving benefit.",
+        "fitNote": "The honest read: the published criteria are age 18–75, first symptoms within the past two years, and vital capacity of 60% or above. Age is fine for now. Time since onset is tight and breathing capacity is unknown — that needs a recent breathing test before anything else.",
+        "sections": [
+          {
+            "label": "Where",
+            "lines": [
+              "One site listed on the registry as of July, and it is not in the UK. Dosing began abroad on 1 July 2026.",
+              "UK and Netherlands authorisation is in place. Expected countries are the US, Canada, Germany, the Netherlands and the UK.",
+              "The UK science came out of UCL Queen Square, so that is the most likely first UK site. Sheffield is the other candidate.",
+              "About 30 participants worldwide — UK places will be in single figures if they materialise at all."
+            ]
+          },
+          {
+            "label": "What it involves",
+            "lines": [
+              "One intrathecal injection — a lumbar puncture, done in clinic, similar to how tofersen is given. The drug is designed to last around 24 weeks from a single dose.",
+              "24 weeks of follow-up: clinic visits, blood and spinal fluid samples, and digital assessments of speech and movement recorded at home.",
+              "Randomised and placebo-controlled, so some participants receive a dummy injection.",
+              "Home-based digital measures were built in deliberately to cut down the number of trips."
+            ]
+          },
+          {
+            "label": "What they are looking for",
+            "lines": [
+              "Aged 18–75.",
+              "Clinically definite, probable, or probable laboratory-supported ALS.",
+              "First symptoms within the past two years.",
+              "Slow vital capacity of at least 60% predicted.",
+              "People with SOD1 or FUS gene faults are excluded — his genetic testing found no variant, so that is not a barrier."
+            ]
+          }
+        ],
+        "steps": [
+          "Get a current breathing test. The 60% slow vital capacity threshold is a hard gate and there is still no recent figure on record. Nothing else matters until this number exists.",
+          "Ask his neurologist to register interest with the UCL Queen Square MND research team now, naming FUNCtion ALS (TRCN-1023). A 30-place trial recruits from existing referral lists, not adverts.",
+          "Register with TiM-R if he has not already — UK teams search it when they need to fill places at short notice.",
+          "Ask whether the two-year onset window runs from first symptoms or from diagnosis. With onset in 2024 this is the difference between eligible and not.",
+          "Check the registry record every few weeks for a UK site appearing. That is where it will show first, ahead of any charity page."
+        ],
+        "timing": "Dosing started abroad on 1 July 2026 and the company expects to add regions later in the year. Realistically a UK site is a late-2026 or 2027 question — but the breathing test and the expression of interest are worth doing now, because they take weeks and the places are few.",
+        "applyLinks": [
+          {
+            "label": "FUNCtion ALS registry record, NCT07674667",
+            "url": "https://clinicaltrials.gov/study/NCT07674667"
+          },
+          {
+            "label": "FUNCtion ALS study page (CSG)",
+            "url": "https://www.mndcsg.org.uk/healthcare-research/studies/function-als"
+          },
+          {
+            "label": "Register with TiM-R",
+            "url": "https://www.mndassociation.org/research/get-involved-in-research/take-part-in-research/tim-r-remote-platform-mnd-research"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pioneer",
+      "name": "PIONEER-ALS · Vtx-002",
+      "kicker": "Drug trial · in set-up",
+      "type": "drug",
+      "phase": "Phase 1/2",
+      "status": "setup",
+      "blurb": "Gene therapy given as a single injection at the base of the brain, testing two doses in twelve people. VectorY received UK and European authorisation in April 2026 and the study is recruiting in the US and Europe, but the UK sites are still listed as in set-up. Twelve places worldwide makes this a long shot.",
+      "plain": "In plain terms: another early-phase safety and dosing study. Any effect on symptoms would be a bonus rather than the goal, and criteria usually favour people diagnosed recently.",
+      "placeboLabel": "To be confirmed",
+      "site": "Sites to be confirmed",
+      "miles": null,
+      "burden": "To be confirmed",
+      "apply": "Not yet open",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/pioneer-als",
+      "windowLabel": "Expected early 2027",
+      "tlNote": "UK sites in set-up · recruiting elsewhere",
+      "barStart": 50,
+      "barWidth": 50,
+      "barLabel": "Expected early 2027",
+      "criteria": [],
+      "applyLinks": [
+        {
+          "label": "PIONEER-ALS study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/pioneer-als"
+        },
+        {
+          "label": "MND Association VTx-002 page — updated when a UK site is confirmed",
+          "url": "https://www.mndassociation.org/research/clinical-trials/treatment-trials/vtx-002"
+        },
+        {
+          "label": "Registry record NCT07287397",
+          "url": "https://clinicaltrials.gov/study/NCT07287397"
+        }
+      ],
+      "applyGuide": {
+        "order": 3,
+        "statusLine": "UK authorised in April 2026 — recruiting in the US and Netherlands, UK sites still in set-up",
+        "statusTone": "setup",
+        "reminder": "A one-off gene therapy injection into the fluid-filled space at the base of the brain. VTx-002 instructs nerve cells to make an antibody against TDP-43, the misfolded protein found in almost all MND. Twelve people worldwide, two dose levels, everyone gets the drug — there is no placebo. Follow-up runs up to five years.",
+        "fitNote": "The honest read: twelve places on the whole planet, and the registry entry asks for diagnosis within the last 18 months. He is outside that. Realistically this is a long shot, and it is here so you know it exists rather than because it is likely.",
+        "sections": [
+          {
+            "label": "Where",
+            "lines": [
+              "No UK site has been named yet. The UK authorisation came through in April 2026 and VectorY has not published which centres will open.",
+              "Currently recruiting: Mass General Brigham (Boston), UC San Diego, Mayo Clinic Florida, University of Pennsylvania, and UMC Utrecht in the Netherlands.",
+              "The lead European centres named so far are in Belgium and the Netherlands, so a UK site is not guaranteed even with authorisation in place."
+            ]
+          },
+          {
+            "label": "What it involves",
+            "lines": [
+              "A single injection into the cisterna magna at the base of the skull — a more involved procedure than a lumbar puncture, done under imaging.",
+              "No placebo group. Everyone enrolled receives one of the two dose levels.",
+              "Follow-up through clinic visits plus remote monitoring by phone and app, with safety data collected for up to five years. That five-year commitment is standard for gene therapies.",
+              "Secondary measures at 6 and 12 months: function score, breathing capacity, blood and spinal fluid markers."
+            ]
+          },
+          {
+            "label": "What they are looking for",
+            "lines": [
+              "Adults with ALS, diagnosed within roughly the last 18 months.",
+              "Muscle weakness present, and breathing function above the study threshold.",
+              "Full criteria are on the registry record under NCT07287397.",
+              "With only twelve places, sites tend to enrol people they already know well."
+            ]
+          }
+        ],
+        "steps": [
+          "Ask his neurologist to register interest with the UK gene therapy trial network and to note PIONEER-ALS specifically. If a UK site opens, that referral list is where it will recruit from.",
+          "Watch the MND Association's VTx-002 page, which is updated whenever a UK site is confirmed.",
+          "Do not pursue an overseas site. Gene therapy trials require the participant to be local to the treating centre for years of follow-up, and travel funding is not offered.",
+          "If a UK site does open, expect to be asked for a recent breathing test and a clear date of first symptoms — worth having both on file."
+        ],
+        "timing": "UK sites in set-up with no published opening date. The realistic checkpoint is early 2027, by which point the twelve places may already be filled."
+      }
+    },
+    {
+      "id": "nura",
+      "name": "Nura Bio · VNB-4746",
+      "kicker": "Drug trial · in set-up",
+      "type": "drug",
+      "phase": "Phase 1b/2",
+      "status": "setup",
+      "blurb": "Phase 1b/2 study of VNB-4746 in ALS, in set-up in the UK.",
+      "plain": "In plain terms: VNB-4746 targets SARM1, an enzyme that acts as a self-destruct switch inside damaged nerve fibres. Blocking it is a genuinely new idea in MND, but this stage of testing is about safety and dose, not proof that it helps.",
+      "placeboLabel": "To be confirmed",
+      "site": "Sites to be confirmed",
+      "miles": null,
+      "burden": "To be confirmed",
+      "apply": "Not yet open",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/nura-bio-phase-1b2-study",
+      "windowLabel": "Expected Feb 2027",
+      "tlNote": "VNB-4746 · in set-up",
+      "barStart": 58,
+      "barWidth": 42,
+      "barLabel": "Expected Feb 2027",
+      "criteria": [],
+      "applyLinks": [
+        {
+          "label": "Nura Bio study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/nura-bio-phase-1b2-study"
+        }
+      ]
+    },
+    {
+      "id": "primec",
+      "name": "PARAGON · PrimeC",
+      "kicker": "Drug trial · phase 3 · not yet enrolling",
+      "type": "drug",
+      "phase": "Phase 3",
+      "status": "setup",
+      "blurb": "Still not enrolling. In September 2026 NeuroSense revamped the whole plan: a restructured phase 3 with fewer participants and a shorter readout, favouring people early in the disease, plus a head-to-head study against Radicava. The changes are not finalised and need FDA sign-off. No UK site has ever been named.",
+      "plain": "In plain terms: a twice-daily capsule combining two existing licensed drugs — ciprofloxacin (an antibiotic) and celecoxib (an anti-inflammatory) — at doses designed to work together against inflammation, iron build-up and faulty RNA handling in nerve cells. The phase 2b results are among the most encouraging in MND: functional decline slowed by roughly a third, a median survival gain of over a year, and it is the first drug reported to reduce TDP-43 in a placebo-controlled trial. Those results come from 68 people with a crossover design, so they need confirming — but this is a genuinely promising drug. The problem is access, not plausibility — and the plan keeps being redrawn, which pushes any UK involvement further out. The nearer-term route is Canada: a submission for approval is targeted for December 2026, which would make PrimeC a licensed drug there before it is available in any UK trial.",
+      "placeboLabel": "Would be placebo-controlled",
+      "site": "No UK site — US and EU only",
+      "miles": null,
+      "burden": "Twice-daily capsules, 12 months, if a site ever opens",
+      "apply": "Nothing to apply to yet — no UK site",
+      "url": "https://clinicaltrials.gov/study/NCT06665165",
+      "tlNote": "Not enrolling · plan restructured Sep 2026",
+      "barStart": 55,
+      "barWidth": 45,
+      "barLabel": "Not enrolling · no UK site",
+      "criteria": [
+        {
+          "text": "A UK site open to recruitment",
+          "check": "blocked",
+          "note": "none named",
+          "blockedShort": "no UK site exists"
+        },
+        {
+          "text": "Trial actually enrolling",
+          "check": "blocked",
+          "note": "funding pending",
+          "blockedShort": "not yet enrolling anywhere"
+        },
+        {
+          "text": "Aged 18–75",
+          "check": "age",
+          "min": 18,
+          "max": 75
+        },
+        {
+          "text": "Diagnosis of ALS",
+          "check": "always",
+          "note": "recorded as ALS"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "PARAGON registry record",
+          "url": "https://clinicaltrials.gov/study/NCT06665165"
+        },
+        {
+          "label": "NeuroSense PrimeC programme page",
+          "url": "https://www.neurosense-tx.com/primec/"
+        },
+        {
+          "label": "PARADIGM phase 2b results in JAMA Neurology",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41837970/"
+        },
+        {
+          "label": "MND Association: treatment trials tracker",
+          "url": "https://www.mndassociation.org/research/clinical-trials/treatment-trials"
+        }
+      ]
+    },
+    {
+      "id": "biomarkers",
+      "name": "ALS Biomarkers Study",
+      "kicker": "Observational · from home",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Builds a sample bank covering the natural history of the disease, using simple at-home collection kits. You can sign up yourselves without a referral.",
+      "plain": "In plain terms: no treatment is given. Samples are used to work out which markers in blood track the disease, so future trials can tell sooner whether a drug is working. It costs almost no time and makes better trials possible for others.",
+      "placeboLabel": "No treatment given",
+      "site": "From home",
+      "miles": 0,
+      "burden": "Occasional home sample kits by post",
+      "apply": "Sign up directly — no referral needed",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/als-biomarkers-study",
+      "tlNote": "At home · observational",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · sign up yourselves, no travel",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "Able to give samples at home",
+          "check": "always",
+          "note": "kits are posted out"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "ALS Biomarkers Study — sign up yourself",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/als-biomarkers-study"
+        },
+        {
+          "label": "MND Association: take part in research",
+          "url": "https://www.mndassociation.org/research/get-involved-in-research/take-part-in-research"
+        }
+      ]
+    },
+    {
+      "id": "joinmnd",
+      "name": "Join MND Research",
+      "kicker": "Observational · remote platform",
+      "type": "obs",
+      "phase": "Registry",
+      "blurb": "A register that matches people to studies they could take part in, locally and online. Signing up here means new studies find them, rather than the other way round.",
+      "plain": "In plain terms: not a study in itself — a way of being found. Researchers search the register when they need participants, so signing up means opportunities come to you rather than needing to be spotted.",
+      "placeboLabel": "No treatment given",
+      "site": "Online",
+      "miles": 0,
+      "burden": "Occasional questionnaires",
+      "apply": "Sign up directly — no referral needed",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/tim-r",
+      "tlNote": "Register · online",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · sign up yourselves",
+      "criteria": [
+        {
+          "text": "Living with MND in the UK",
+          "check": "always",
+          "note": "yes"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Join MND Research — register yourself",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/tim-r"
+        },
+        {
+          "label": "Search NIHR Be Part of Research",
+          "url": "https://bepartofresearch.nihr.ac.uk/results/search-results?query=motor%20neurone%20disease"
+        }
+      ]
+    },
+    {
+      "id": "register",
+      "name": "MND Register",
+      "kicker": "Observational · population study",
+      "type": "obs",
+      "phase": "Register",
+      "blurb": "National record of everyone living with MND in the UK, led from King's College London and Oxford. Consent is usually taken at a care centre.",
+      "plain": "In plain terms: a headcount, essentially. Knowing accurately how many people have MND and where they live shapes NHS funding and where trials are placed. No visits, no treatment, no burden.",
+      "placeboLabel": "No treatment given",
+      "site": "Via his care centre",
+      "miles": null,
+      "burden": "No visits — data only",
+      "apply": "Ask his care team to add him",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-register",
+      "tlNote": "Population register",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling",
+      "criteria": [
+        {
+          "text": "Living with MND in the UK",
+          "check": "always",
+          "note": "yes"
+        },
+        {
+          "text": "Already registered?",
+          "check": "unknown",
+          "note": "many centres enrol people automatically"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "MND Register study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-register"
+        }
+      ]
+    },
+    {
+      "id": "tonic",
+      "name": "TONiC",
+      "kicker": "Observational · quality of life",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "National questionnaire study on what shapes quality of life in neurological conditions. Runs at participating clinics only.",
+      "plain": "In plain terms: a questionnaire about what actually affects day-to-day quality of life — fatigue, mood, independence — rather than anything about drugs. It shapes how services are designed, and someone else can write the answers down for him.",
+      "placeboLabel": "No treatment given",
+      "site": "Oxford",
+      "miles": 45,
+      "burden": "One questionnaire, help allowed",
+      "apply": "Ask at his next clinic appointment",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/trajectories-of-outcome-in-neurological-conditions-tonic",
+      "tlNote": "Questionnaire study",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling",
+      "criteria": [
+        {
+          "text": "Diagnosis of a neurological condition",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "His clinic takes part",
+          "check": "unknown",
+          "note": "not listed publicly — ask the team"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "TONiC study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/trajectories-of-outcome-in-neurological-conditions-tonic"
+        }
+      ]
+    },
+    {
+      "id": "denim",
+      "name": "DENIM",
+      "kicker": "Observational · ventilation support",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Tests whether intensive support at home helps people use non-invasive ventilation for longer. Only open once NIV has been started, so worth revisiting later.",
+      "plain": "In plain terms: not a drug. It tests whether extra hands-on support at home helps people keep using their breathing machine comfortably, and for longer. NIV is one of the few things shown to help both survival and quality of life in MND, so getting good use of it matters more than most things on this list.",
+      "placeboLabel": "No treatment given",
+      "site": "Portsmouth",
+      "miles": 115,
+      "burden": "Home visits from the respiratory team",
+      "apply": "Through the respiratory or MND team",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/denim",
+      "tlNote": "Needs NIV in use",
+      "barStart": 0,
+      "barWidth": 70,
+      "barLabel": "Rolling · home support study",
+      "criteria": [
+        {
+          "text": "Using non-invasive ventilation",
+          "check": "nivRequire",
+          "blockedShort": "needs NIV already in use"
+        },
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "DENIM study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/denim"
+        }
+      ]
+    },
+    {
+      "id": "acorn",
+      "name": "ACORN",
+      "kicker": "Observational · C9orf72",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Investigates nerve damage in people carrying a change in the C9orf72 gene, the most common genetic cause of MND.",
+      "plain": "In plain terms: an observational study tracking how nerve damage develops in people carrying the C9orf72 fault, to work out how early it begins. No treatment is given; it lays the groundwork for gene-targeted drugs like those now available for SOD1 and FUS.",
+      "placeboLabel": "No treatment given",
+      "site": "London",
+      "miles": 100,
+      "burden": "Occasional clinic visits and samples",
+      "apply": "Via a specialist genetic clinic",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/acorn",
+      "tlNote": "C9orf72 carriers",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · C9orf72 carriers",
+      "criteria": [
+        {
+          "text": "Change in the C9orf72 gene",
+          "check": "gene",
+          "gene": "c9",
+          "blockedShort": "needs a C9orf72 gene variant"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "ACORN study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/acorn"
+        }
+      ]
+    },
+    {
+      "id": "monitor",
+      "name": "MONITOR ALS",
+      "kicker": "Observational · biomarkers",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Measures motor neurone activity non-invasively, looking for markers of progression that could replace more burdensome tests.",
+      "plain": "In plain terms: no treatment. It tests whether motor neurone activity can be measured without needles, so future trials could track progression more comfortably and with fewer participants.",
+      "placeboLabel": "No treatment given",
+      "site": "Sheffield",
+      "miles": 160,
+      "burden": "Repeat recording sessions at the site",
+      "apply": "Ask his team for a referral",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/monitor-als",
+      "tlNote": "Non-invasive recordings",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling",
+      "criteria": [
+        {
+          "text": "Diagnosis of ALS",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "Able to travel to the study site",
+          "check": "unknown",
+          "note": "160 miles — depends on what he'd find manageable"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "MONITOR ALS study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/monitor-als"
+        }
+      ]
+    },
+    {
+      "id": "genomics",
+      "name": "Motor System Genomics",
+      "kicker": "Observational · diagnostic markers",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Studies fluid samples from people with MND, family members and controls to find markers that aid diagnosis.",
+      "plain": "In plain terms: sample donation. The aim is to find markers that let MND be diagnosed sooner — diagnosis currently takes around a year on average, and that is time lost for trials that require an early diagnosis.",
+      "placeboLabel": "No treatment given",
+      "site": "Via care centre",
+      "miles": null,
+      "burden": "Blood or fluid samples at routine visits",
+      "apply": "Ask at his next appointment",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/motor-system-genomics",
+      "tlNote": "Sample donation",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "His centre collects for this study",
+          "check": "unknown",
+          "note": "ask the team"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Motor System Genomics study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/motor-system-genomics"
+        }
+      ]
+    },
+    {
+      "id": "microbiome",
+      "name": "MND microbiome study",
+      "kicker": "Observational · biomarkers",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Compares gut microbial samples from people with MND, family members and healthy controls.",
+      "plain": "In plain terms: sample donation, looking at whether gut bacteria differ in people with MND. Exploratory work — interesting, unproven, and no burden to take part in.",
+      "placeboLabel": "No treatment given",
+      "site": "Via care centre",
+      "miles": null,
+      "burden": "Sample kits, no extra visits",
+      "apply": "Ask at his next appointment",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-microbiome",
+      "tlNote": "Sample donation",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "His centre collects for this study",
+          "check": "unknown",
+          "note": "ask the team"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "MND microbiome study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-microbiome"
+        }
+      ]
+    },
+    {
+      "id": "mndgenetics",
+      "name": "MND GENETICS",
+      "kicker": "Observational · genetic screening",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Genetically screens 150 people with MND and 50 family members to identify causative variants. Relevant even after standard testing, as the panel is wider.",
+      "plain": "In plain terms: broader genetic testing than the standard NHS panel. Worth knowing about even though standard testing found nothing, because a wider panel occasionally finds a variant — and a known variant can open the door to gene-targeted trials that are otherwise closed.",
+      "placeboLabel": "No treatment given",
+      "site": "Via care centre",
+      "miles": null,
+      "burden": "One blood sample",
+      "apply": "Ask his team about a referral",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-genetics",
+      "tlNote": "Wider gene panel",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · recruiting to target",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "Places still available",
+          "check": "unknown",
+          "note": "fixed recruitment target"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "MND GENETICS study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-genetics"
+        }
+      ]
+    },
+    {
+      "id": "muscle",
+      "name": "Measuring muscle health in MND",
+      "kicker": "Observational · imaging",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Uses ultrasound to measure muscle health, aiming at earlier diagnosis and better monitoring.",
+      "plain": "In plain terms: painless ultrasound scans of muscle, to see whether they show change earlier than current measures. No treatment is given.",
+      "placeboLabel": "No treatment given",
+      "site": "Via care centre",
+      "miles": null,
+      "burden": "Ultrasound scans at clinic visits",
+      "apply": "Ask at his next appointment",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/measuring-muscle-health",
+      "tlNote": "Ultrasound imaging",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "His centre takes part",
+          "check": "unknown",
+          "note": "ask the team"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Measuring muscle health study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/measuring-muscle-health"
+        }
+      ]
+    },
+    {
+      "id": "casmnd",
+      "name": "CAS-MND",
+      "kicker": "Observational · cough and secretions",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Looks at how people with MND and their carers manage coughing and excess saliva or phlegm, and what gets in the way of managing it well.",
+      "plain": "In plain terms: not a drug. Interviews and questionnaires about a symptom that becomes a daily problem for most people with MND. It won't change his own care, but it feeds directly into guidance that would.",
+      "placeboLabel": "No treatment given",
+      "site": "Remote — by phone, video or questionnaire",
+      "miles": 0,
+      "burden": "Interview or questionnaire, one or two sessions",
+      "apply": "Sign up through your MND team, or ask them to refer you",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/cas-mnd",
+      "tlNote": "Rolling",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · open now",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No age limit",
+          "check": "always",
+          "note": "no bar"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "CAS-MND study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/cas-mnd"
+        }
+      ]
+    },
+    {
+      "id": "choking",
+      "name": "Management of choking",
+      "kicker": "Observational · swallowing safety",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Explores choking episodes in people living with MND and is developing treatment guidance for teams managing them.",
+      "plain": "In plain terms: not a drug. It gathers real accounts of choking episodes so that clear guidance can be written for clinical teams. Low burden, and directly relevant if swallowing becomes an issue.",
+      "placeboLabel": "No treatment given",
+      "site": "Remote — by phone, video or questionnaire",
+      "miles": 0,
+      "burden": "Interview, one session",
+      "apply": "Sign up through your MND team, or ask them to refer you",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/management-of-choking",
+      "tlNote": "Rolling",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · open now",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No age limit",
+          "check": "always",
+          "note": "no bar"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Management of choking study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/management-of-choking"
+        }
+      ]
+    },
+    {
+      "id": "together",
+      "name": "MND Together",
+      "kicker": "Observational · services and coordination",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Examines what works and what fails in the coordination of MND services across the NHS and social care.",
+      "plain": "In plain terms: not a drug. It's about the joins between services — the neurologist, the respiratory team, community care — and where they come apart. Useful to contribute to if the care coordination has been frustrating.",
+      "placeboLabel": "No treatment given",
+      "site": "Remote — by phone, video or questionnaire",
+      "miles": 0,
+      "burden": "Interview or survey",
+      "apply": "Sign up through your MND team, or ask them to refer you",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-together",
+      "tlNote": "Rolling",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · open now",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No age limit",
+          "check": "always",
+          "note": "no bar"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "MND Together study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-together"
+        }
+      ]
+    },
+    {
+      "id": "optimnd",
+      "name": "Opti MND",
+      "kicker": "Observational · models of care",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Compares different ways of delivering MND care and how they affect outcomes for both the person with MND and their family carers.",
+      "plain": "In plain terms: not a drug. It follows how different care setups play out, including for carers — one of the few studies that treats the family's experience as an outcome in its own right.",
+      "placeboLabel": "No treatment given",
+      "site": "Remote — by phone, video or questionnaire",
+      "miles": 0,
+      "burden": "Questionnaires over time, carer included",
+      "apply": "Sign up through your MND team, or ask them to refer you",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/opti-mnd",
+      "tlNote": "Rolling",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · open now",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No age limit",
+          "check": "always",
+          "note": "no bar"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Opti MND study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/opti-mnd"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "name": "TIME",
+      "kicker": "Observational · remote monitoring",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Developing and evaluating TiM-Care, a remote monitoring system for people with MND and their carers.",
+      "plain": "In plain terms: not a drug. You use a monitoring tool from home and the team assesses whether it improves care. Very low burden and can be done entirely from the house.",
+      "placeboLabel": "No treatment given",
+      "site": "Remote — by phone, video or questionnaire",
+      "miles": 0,
+      "burden": "Remote monitoring from home, ongoing",
+      "apply": "Sign up through your MND team, or ask them to refer you",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/time",
+      "tlNote": "Rolling",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · open now",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No age limit",
+          "check": "always",
+          "note": "no bar"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "TIME study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/time"
+        }
+      ]
+    },
+    {
+      "id": "views",
+      "name": "Exploring views of MND treatments",
+      "kicker": "Observational · treatment priorities",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Explores what matters most to people with MND when weighing up medications, to shape what drug developers aim at.",
+      "plain": "In plain terms: not a drug. A structured way of saying what a treatment would actually need to deliver to be worth taking — time, function, speech, independence. One session.",
+      "placeboLabel": "No treatment given",
+      "site": "Remote — by phone, video or questionnaire",
+      "miles": 0,
+      "burden": "Single questionnaire or interview",
+      "apply": "Sign up through your MND team, or ask them to refer you",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/exploring-views-of-mnd-drug-treatments",
+      "tlNote": "Rolling",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · open now",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No age limit",
+          "check": "always",
+          "note": "no bar"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Exploring views of MND treatments study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/exploring-views-of-mnd-drug-treatments"
+        }
+      ]
+    },
+    {
+      "id": "preferences",
+      "name": "Understanding preferences of drug treatments",
+      "kicker": "Observational · in set-up",
+      "type": "obs",
+      "phase": "Observational",
+      "blurb": "Measures the value people with MND place on different characteristics of a drug treatment. Listed as in set-up and opening soon.",
+      "plain": "In plain terms: not a drug. A trade-off exercise — how much side effect is worth how much benefit. Not open yet, so one to ask about later in the year.",
+      "placeboLabel": "No treatment given",
+      "site": "Remote — by phone, video or questionnaire",
+      "miles": 0,
+      "burden": "Single questionnaire, once open",
+      "apply": "Not open yet — ask his MND team later in the year",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/understanding-preferences-of-drug-treatments",
+      "tlNote": "In set-up",
+      "barStart": 0,
+      "barWidth": 60,
+      "barLabel": "In set-up · opening soon",
+      "criteria": [
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No age limit",
+          "check": "always",
+          "note": "no bar"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Understanding preferences of drug treatments study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/understanding-preferences-of-drug-treatments"
+        }
+      ],
+      "status": "setup"
+    }
+  ]
+}
