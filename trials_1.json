@@ -1,0 +1,661 @@
+{
+  "meta": {
+    "compiled": "16 Nov 2026",
+    "note": "UK MND / ALS drug trials and early access programmes, compiled by hand from the MND Clinical Studies Group list, MND Association trials pages, ClinicalTrials.gov, ISRCTN and Be Part of Research. Edit this file to update the app — see how-to-update.md."
+  },
+  "_criteriaHelp": {
+    "check": "One of: age, months, monthsInfo, fvc, nivAllow, nivRequire, gene, riluzole, always, unknown",
+    "age": "{ check: 'age', min: 18, max: 80 }",
+    "months": "{ check: 'months', max: 36 } — months since first symptoms",
+    "monthsInfo": "{ check: 'monthsInfo' } — always met, just states the figure",
+    "fvc": "{ check: 'fvc', min: 60 } — unknown if no FVC recorded",
+    "nivAllow": "{ check: 'nivAllow', allow: ['none','night'] } — met when his NIV use is in the list",
+    "nivRequire": "{ check: 'nivRequire' } — met only when NIV is in use",
+    "gene": "{ check: 'gene', gene: 'fus' } — met with that variant, unknown if untested, unmet otherwise",
+    "riluzole": "{ check: 'riluzole' } — always met, notes whether he takes it",
+    "always": "{ check: 'always', note: 'recorded as ALS' }",
+    "unknown": "{ check: 'unknown', note: 'only his team can confirm this' }",
+    "overrides": "Any rule may add metNote / unmetNote / unknownNote to replace the default wording.",
+    "blockedShort": "Optional short phrase used when this criterion is the reason a study doesn't fit, e.g. 'needs a FUS gene variant'. Keep proper names capitalised."
+  },
+  "studies": [
+    {
+      "id": "experts",
+      "name": "EXPERTS-ALS",
+      "kicker": "Drug trial · platform · no placebo",
+      "type": "drug",
+      "phase": "Pre-trial platform",
+      "blurb": "Screens candidate drugs quickly by measuring neurofilament light chain in blood. Now recruiting to ropinirole, doxycycline and salbutamol. Metformin and nifedipine were stopped in August 2026 after an interim analysis showed no change in neurofilament. Neflamapimod and RT1999 (smilagenin) have been selected for later arms. Everyone who joins receives a drug.",
+      "plain": "In plain terms: these are existing drugs, already licensed for other conditions, being re-tested in MND. The trial doesn't measure whether people feel better — it measures whether a protein in the blood called neurofilament light, which rises as nerve cells are damaged, falls while the drug is taken. That makes it a fast screen rather than proof of benefit: a positive result means the drug earns a bigger trial, not that it slows the disease. Most drugs tested this way do not go forward.",
+      "placeboLabel": "No placebo",
+      "site": "Oxford (John Radcliffe) — local patients only; 17 UK sites in all",
+      "miles": 45,
+      "burden": "6 visits over 6 months, blood samples at each",
+      "apply": "Rolling — referral through his neurology team",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/experts-als",
+      "tlNote": "Ropinirole, doxycycline, salbutamol",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · referral any time · 17 UK sites",
+      "criteria": [
+        {
+          "text": "Aged 18 or over",
+          "check": "age",
+          "min": 18
+        },
+        {
+          "text": "Diagnosis of ALS",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "ENCALS prognosis risk score between −6 and −2",
+          "check": "unknown",
+          "note": "calculated by the site at screening"
+        },
+        {
+          "text": "Riluzole allowed if the dose is stable",
+          "check": "riluzole"
+        },
+        {
+          "text": "No breathing-test threshold in the UK summary",
+          "check": "always",
+          "note": "FVC is measured but is not an entry criterion"
+        },
+        {
+          "text": "Under the care of a participating centre (Oxford takes local patients only)",
+          "check": "unknown",
+          "note": "only his team can confirm this"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "EXPERTS-ALS: how to take part",
+          "url": "https://www.experts-als.uk/get-involved/plwals"
+        },
+        {
+          "label": "Email the study team",
+          "url": "mailto:experts-als@sheffield.ac.uk"
+        },
+        {
+          "label": "Recruiting sites and lead doctors",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/experts-als"
+        }
+      ]
+    },
+    {
+      "id": "smart",
+      "name": "MND-SMART",
+      "kicker": "Drug trial · platform · placebo-controlled",
+      "type": "drug",
+      "phase": "Phase 2/3",
+      "blurb": "Adaptive platform run from Edinburgh. Amantadine was discontinued in March 2026 after showing no benefit, so tacrolimus is now the only active arm. A further drug is expected to be added later in 2026.",
+      "plain": "In plain terms: tacrolimus is an immune-damping drug used after transplants. The theory is that some of the nerve damage in MND is driven by the body's own immune activity, so quietening it might slow the loss of function. This is a proper efficacy trial with a placebo group, so it can genuinely detect a slowing — but a realistic hope is a modest change in the rate of decline, not a reversal. With amantadine now dropped, roughly half of new participants will receive placebo rather than tacrolimus.",
+      "placeboLabel": "About half receive placebo",
+      "site": "Southampton or Poole (both still confirming out-of-area referrals); Brighton local only",
+      "miles": 95,
+      "burden": "Monthly contact, mostly remote after the first visits",
+      "apply": "Rolling — referral through his neurology team, but you can register interest yourselves first",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/mnd-smart",
+      "tlNote": "Tacrolimus arm only",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Rolling · adaptive platform",
+      "criteria": [
+        {
+          "text": "Aged 18 or over",
+          "check": "age",
+          "min": 18
+        },
+        {
+          "text": "Diagnosis of MND",
+          "check": "always",
+          "note": "recorded as ALS"
+        },
+        {
+          "text": "No limit on time since diagnosis",
+          "check": "monthsInfo",
+          "metSuffix": ", no bar"
+        },
+        {
+          "text": "Not dependent on ventilation for most of the day",
+          "check": "nivAllow",
+          "allow": [
+            "none",
+            "night"
+          ]
+        },
+        {
+          "text": "Riluzole permitted",
+          "check": "always",
+          "note": "no conflict"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Register your interest with MND-SMART",
+          "url": "https://mnd-smart.org/contact/register-interest"
+        },
+        {
+          "label": "Which trial centres are open",
+          "url": "https://mnd-smart.org/about/trial-centres"
+        },
+        {
+          "label": "Participant FAQs",
+          "url": "https://mnd-smart.org/about/participant-faqs"
+        }
+      ]
+    },
+    {
+      "id": "prevails",
+      "name": "PREVAiLS · pridopidine",
+      "kicker": "Drug trial · placebo-controlled",
+      "type": "drug",
+      "phase": "Phase 3",
+      "blurb": "Confirmatory phase 3 of pridopidine. Three UK sites: King's College Hospital (London) and Royal Stoke take referrals from outside their area; UCLH (Queen Square) is recruiting its own patients only. UK recruitment is planned to run to 1 February 2027.",
+      "plain": "In plain terms: pridopidine acts on the sigma-1 receptor, a switch inside nerve cells that helps them cope with stress and keep their long fibres healthy. An earlier trial missed its main target overall but hinted at benefit in people early in the disease and not yet using breathing support — which is who this trial is aimed at. Best case is a slower decline over six months; the honest expectation is uncertain.",
+      "placeboLabel": "Some receive placebo",
+      "site": "King's College Hospital (London) or Royal Stoke — UCLH local patients only",
+      "miles": 100,
+      "burden": "Clinic visits every 4 weeks, breathing tests at each",
+      "apply": "Recruiting now — referral through his neurology team to King's or Stoke; planned UK end date 1 Feb 2027",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/prevails",
+      "tlNote": "Recruiting · UK end date 1 Feb 2027",
+      "barStart": 0,
+      "barWidth": 58,
+      "barLabel": "Recruiting · King's and Stoke take referrals · to 1 Feb 2027",
+      "criteria": [
+        {
+          "text": "Aged 18–75",
+          "check": "age",
+          "min": 18,
+          "max": 75,
+          "blockedShort": "outside the age range"
+        },
+        {
+          "text": "Within 18 months of first symptoms",
+          "check": "months",
+          "max": 18,
+          "blockedShort": "beyond the 18-month window"
+        },
+        {
+          "text": "Slow vital capacity 60% or above",
+          "check": "fvc",
+          "min": 60,
+          "unknownNote": "no recent FVC on record"
+        },
+        {
+          "text": "Ventilation: tracheostomy or permanent assisted ventilation excluded",
+          "check": "unknown",
+          "note": "the UK summary does not say whether overnight NIV is allowed — ask the site"
+        },
+        {
+          "text": "TRICALS risk score between −6 and −2",
+          "check": "unknown",
+          "note": "calculated by the site at screening"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "PREVAiLS registry record — UK site list, NCT07322003",
+          "url": "https://clinicaltrials.gov/study/NCT07322003"
+        },
+        {
+          "label": "MND Association PREVAiLS page",
+          "url": "https://www.mndassociation.org/research/clinical-trials/treatment-trials/pridopidine-prevails"
+        },
+        {
+          "label": "Prilenia medical information — MedInfo@prilenia.com",
+          "url": "mailto:MedInfo@prilenia.com"
+        }
+      ],
+      "applyGuide": {
+        "order": 1,
+        "statusLine": "Recruiting in the UK — King's and Stoke take out-of-area referrals; planned end 1 Feb 2027",
+        "statusTone": "open",
+        "reminder": "A tablet, taken twice a day for 48 weeks, tested against a placebo. Pridopidine acts on the sigma-1 receptor, a switch inside nerve cells that helps them cope with stress. An earlier trial missed its overall target but hinted at benefit in people early in the disease. This is the confirmatory version of that finding.",
+        "fitNote": "The honest read: first symptoms in June 2025 puts him about 17 months in, inside the 18-month entry window — but only until around December 2026, so screening has to happen within weeks. He is also close to the upper age limit of 75. Overnight NIV is now the main open question. Worth chasing hard, and soon.",
+        "sections": [
+          {
+            "label": "Where",
+            "lines": [
+              "King's College Hospital, London — about 100 miles, direct train to Denmark Hill.",
+              "UCLH (Queen Square), London — recruiting its own patients only, so not an option unless he is already under their care.",
+              "Royal Stoke University Hospital, Stoke-on-Trent — about 110 miles, roughly two hours by car.",
+              "King's and Stoke both accept referrals from outside their area. Stoke is the easier drive; King's is easier by train."
+            ]
+          },
+          {
+            "label": "What it involves",
+            "lines": [
+              "Tablets twice a day at home for 48 weeks — no injections or infusions.",
+              "Clinic visits roughly every four weeks, with breathing tests (vital capacity) and the ALSFRS-R function questionnaire at each.",
+              "Randomised: he could receive pridopidine or a placebo, and neither he nor the team would know which.",
+              "There is an open-label extension — everyone who completes the 48 weeks is offered the real drug afterwards, including those who had placebo."
+            ]
+          },
+          {
+            "label": "What they are looking for",
+            "lines": [
+              "Aged 18–75. He turned 75 on 13 September, so he is still inside the limit — but only until his next birthday, and screening takes weeks.",
+              "Definite or probable ALS on the El Escorial criteria.",
+              "Within 18 months of first symptoms — this is the published entry criterion, not just the subgroup the trial was designed around.",
+              "Slow vital capacity of 60% or more, and a TRICALS risk score between −6 and −2 (the site calculates this).",
+              "Excluded: tracheostomy or permanent assisted ventilation, and SOD1, FUS or C9orf72 gene faults. The UK summary does not say whether overnight NIV is a problem — ask."
+            ]
+          }
+        ],
+        "steps": [
+          "Ring or email King's and Stoke this week rather than picking one. They screen independently and one may have a slot when another does not.",
+          "Ask his neurologist to send a referral the same day. A referral from his own team moves faster than a self-approach, but do not wait for it before making the call.",
+          "Ask the two key questions on the phone before travelling anywhere: does overnight NIV exclude him, and is the 18-month window measured to consent or to randomisation. With symptoms from June 2025, that window closes around December 2026.",
+          "Flag his age. He is 75 now — say so up front so nobody discovers it at screening and wastes three weeks.",
+          "If invited, screening is one longer visit: breathing tests, bloods, ECG and the function questionnaire."
+        ],
+        "timing": "Recruiting now, and his onset window makes this the most urgent study on the list — the 18-month limit closes around December 2026, well before his age limit at 76. Screening takes weeks, so the call needs to happen this month.",
+        "applyLinks": [
+          {
+            "label": "PREVAiLS registry record — UK site list, NCT07322003",
+            "url": "https://clinicaltrials.gov/study/NCT07322003"
+          },
+          {
+            "label": "MND Association PREVAiLS page",
+            "url": "https://www.mndassociation.org/research/clinical-trials/treatment-trials/pridopidine-prevails"
+          },
+          {
+            "label": "Prilenia medical information — MedInfo@prilenia.com",
+            "url": "mailto:MedInfo@prilenia.com"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fusion",
+      "name": "FUSION · ulefnersen",
+      "kicker": "Gene-specific drug trial · enrolment closed",
+      "type": "drug",
+      "phase": "Phase 3",
+      "blurb": "For people with a FUS gene fault only. The phase 3 trial is no longer recruiting: it reported positive topline results in September 2026, and Ionis and Otsuka are discussing filings with the FDA and other regulators. Any UK access would come through a genetics centre, via an access programme or eventual licensing.",
+      "plain": "In plain terms: this is the most targeted kind of treatment available in MND. Where a FUS gene fault is the cause, the gene issues a damaging instruction; ulefnersen is designed to silence that instruction before the harmful protein is made. Individual patients treated early have shown striking stabilisation, so expectations here are higher than for most trials — but it only applies to the small number of people whose disease is caused by that gene.",
+      "placeboLabel": "Some receive placebo",
+      "site": "London (UCLH)",
+      "miles": 98,
+      "burden": "Lumbar punctures every few weeks",
+      "apply": "Not recruiting — ask a genetic MND clinic about future access",
+      "url": "https://clinicaltrials.gov/study/NCT04768972",
+      "tlNote": "FUS only · enrolment closed, positive results",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Enrolment closed · positive results Sep 2026",
+      "criteria": [
+        {
+          "text": "Trial still enrolling",
+          "check": "blocked",
+          "note": "enrolment closed; results reported Sep 2026",
+          "blockedShort": "enrolment has closed"
+        },
+        {
+          "text": "Confirmed change in the FUS gene",
+          "check": "gene",
+          "gene": "fus",
+          "blockedShort": "needs a FUS gene variant"
+        },
+        {
+          "text": "Aged 12 or over",
+          "check": "age",
+          "min": 12
+        },
+        {
+          "text": "Able to attend a specialist centre for lumbar punctures",
+          "check": "unknown",
+          "note": "depends on travel and his wishes"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Ulefnersen (FUS) registry entry",
+          "url": "https://clinicaltrials.gov/study/NCT04768972"
+        },
+        {
+          "label": "Inherited MND — UK genetic clinics",
+          "url": "https://www.mndcsg.org.uk/patient-resources/inherited-forms-of-mnd"
+        }
+      ]
+    },
+    {
+      "id": "tofersen",
+      "name": "Tofersen early access",
+      "kicker": "Early access programme · SOD1 only",
+      "type": "eap",
+      "phase": "Early access",
+      "blurb": "Free-of-charge access to tofersen for the roughly 2% of people whose MND is caused by a fault in the SOD1 gene, while NHS commissioning is decided. Capacity depends on the care centre.",
+      "plain": "In plain terms: the same silencing approach as ulefnersen, but for the SOD1 gene. Tofersen lowers the harmful SOD1 protein and reduced neurofilament levels in trials; benefit to function appeared slowly and was clearest in people treated early. It is injected into the spine monthly, indefinitely. It is not a cure and does not recover function already lost.",
+      "placeboLabel": "Not a trial — everyone treated",
+      "site": "Care-centre dependent",
+      "miles": null,
+      "burden": "Monthly intrathecal injections",
+      "apply": "Through an MND care centre able to deliver it",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/tofersen-eap",
+      "tlNote": "SOD1 only · early access",
+      "barStart": 0,
+      "barWidth": 100,
+      "barLabel": "Ongoing · SOD1 gene only",
+      "criteria": [
+        {
+          "text": "Confirmed change in the SOD1 gene",
+          "check": "gene",
+          "gene": "sod1",
+          "blockedShort": "needs an SOD1 gene variant"
+        },
+        {
+          "text": "Care centre with capacity to deliver it",
+          "check": "unknown",
+          "note": "varies by centre"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Tofersen early access programme",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/tofersen-eap"
+        },
+        {
+          "label": "Find an MND care centre",
+          "url": "https://www.mndassociation.org/support-and-information/our-services/mnd-care-centres-and-networks"
+        }
+      ]
+    },
+    {
+      "id": "function",
+      "name": "FUNCtion ALS · TRCN-1023",
+      "kicker": "Drug trial · in set-up",
+      "type": "drug",
+      "phase": "Phase 1/2",
+      "status": "setup",
+      "blurb": "Recruitment opened in September 2026 at UCLH and Sheffield, but both sites are taking their own local patients only for now. Planned UK recruitment runs to February 2027, with about 30 places worldwide. Sheffield's Prof Dame Pamela Shaw is Chief Investigator. Approach through his MND team.",
+      "plain": "In plain terms: an early-phase study, so its purpose is to establish safety and the right dose rather than to show benefit. Taking part is a contribution to the science more than a treatment plan.",
+      "placeboLabel": "To be confirmed",
+      "site": "UCLH (London) and Sheffield Teaching Hospitals",
+      "miles": null,
+      "burden": "To be confirmed",
+      "apply": "Local patients only for now — ask his neurologist whether either site will take an out-of-area referral",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/function-als",
+      "windowLabel": "Local patients only · to Feb 2027",
+      "tlNote": "Open to local patients only",
+      "barStart": 17,
+      "barWidth": 50,
+      "barLabel": "Local patients only at UCLH and Sheffield · to Feb 2027",
+      "criteria": [],
+      "applyLinks": [
+        {
+          "label": "FUNCtion ALS registry record, NCT07674667",
+          "url": "https://clinicaltrials.gov/study/NCT07674667"
+        },
+        {
+          "label": "FUNCtion ALS study page (CSG)",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/function-als"
+        },
+        {
+          "label": "Register with TiM-R",
+          "url": "https://www.mndassociation.org/research/get-involved-in-research/take-part-in-research/tim-r-remote-platform-mnd-research"
+        }
+      ],
+      "applyGuide": {
+        "order": 2,
+        "statusLine": "Open at UCLH and Sheffield for their own patients only — out-of-area referrals not yet accepted",
+        "statusTone": "setup",
+        "reminder": "A single injection into the fluid around the spine, tested against a placebo, with 24 weeks of follow-up. TRCN-1023 is an antisense drug designed to restore a protein called UNC13A, which stops working properly in roughly 97% of people with MND. The science behind it came out of UCL. It is an early-phase trial, so the purpose is safety and dose-finding rather than proving benefit.",
+        "fitNote": "The honest read: the published criteria are age 18–75, first symptoms within the past two years, and vital capacity of 60% or above. With symptoms from June 2025 he is inside the onset window until around June 2027, and age is fine for now. Breathing capacity is the unknown, and both sites are currently taking only their own patients — so the question for his neurologist is whether either will accept an out-of-area referral.",
+        "sections": [
+          {
+            "label": "Where",
+            "lines": [
+              "University College London Hospitals (Queen Square) — about 105 miles. The drug grew out of research here.",
+              "Sheffield Teaching Hospitals (Royal Hallamshire) — about 160 miles. The trial's Chief Investigator, Prof Dame Pamela Shaw, is based here.",
+              "Also authorised in the Netherlands, with sites in the US, Canada and Germany to follow.",
+              "About 30 participants worldwide — UK places will be in single figures."
+            ]
+          },
+          {
+            "label": "What it involves",
+            "lines": [
+              "One intrathecal injection — a lumbar puncture, done in clinic, similar to how tofersen is given. The drug is designed to last around 24 weeks from a single dose.",
+              "24 weeks of follow-up: clinic visits, blood and spinal fluid samples, and digital assessments of speech and movement recorded at home.",
+              "Randomised and placebo-controlled, so some participants receive a dummy injection.",
+              "Home-based digital measures were built in deliberately to cut down the number of trips."
+            ]
+          },
+          {
+            "label": "What they are looking for",
+            "lines": [
+              "Aged 18–75.",
+              "Clinically definite, probable, or probable laboratory-supported ALS.",
+              "First symptoms within the past two years.",
+              "Slow vital capacity of at least 60% predicted.",
+              "On a stable dose of approved ALS medication, such as riluzole, for at least 4 weeks.",
+              "People with SOD1 or FUS gene faults are excluded — his genetic testing found no variant, so that is not a barrier."
+            ]
+          }
+        ],
+        "steps": [
+          "Get a current breathing test. The 60% slow vital capacity threshold is a hard gate and there is still no recent figure on record. Nothing else matters until this number exists.",
+          "Ask his neurologist to contact the UCLH or Sheffield MND research team now, naming FUNCtion ALS (TRCN-1023). A 30-place trial recruits through specialist teams, not adverts — the MND Foundation asks people not to approach charities for access.",
+          "Register with TiM-R if he has not already — UK teams search it when they need to fill places at short notice.",
+          "Confirm the two-year window runs from first symptoms. With symptoms from June 2025, he is inside it until around June 2027.",
+          "Ask the site directly whether places are still open. Recruitment this small can fill within weeks of a site opening."
+        ],
+        "timing": "Both UK sites opened in September 2026 for their own patients. Planned UK recruitment ends February 2027 and places are few, so the breathing test and the out-of-area question are worth raising now.",
+        "applyLinks": [
+          {
+            "label": "FUNCtion ALS registry record, NCT07674667",
+            "url": "https://clinicaltrials.gov/study/NCT07674667"
+          },
+          {
+            "label": "FUNCtion ALS study page (CSG)",
+            "url": "https://www.mndcsg.org.uk/healthcare-research/studies/function-als"
+          },
+          {
+            "label": "Register with TiM-R",
+            "url": "https://www.mndassociation.org/research/get-involved-in-research/take-part-in-research/tim-r-remote-platform-mnd-research"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pioneer",
+      "name": "PIONEER-ALS · Vtx-002",
+      "kicker": "Drug trial · in set-up",
+      "type": "drug",
+      "phase": "Phase 1/2",
+      "status": "setup",
+      "blurb": "Gene therapy given as a single injection at the base of the brain, testing two doses. VectorY expanded the study from 12 to 36 participants in September 2026 and raised €74.5m in November to fund it through to final results. In the UK, Sheffield is recruiting its own patients only and King's College Hospital is in set-up, listed as opening soon.",
+      "plain": "In plain terms: another early-phase safety and dosing study. Any effect on symptoms would be a bonus rather than the goal, and criteria usually favour people diagnosed recently.",
+      "placeboLabel": "To be confirmed",
+      "site": "King's College Hospital, London (opening soon); Sheffield local patients only",
+      "miles": null,
+      "burden": "To be confirmed",
+      "apply": "King's opening soon — referral through his neurology team",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/pioneer-als",
+      "windowLabel": "King's opening soon",
+      "tlNote": "Sheffield local only · King's opening soon",
+      "barStart": 33,
+      "barWidth": 67,
+      "barLabel": "King's opening soon · Sheffield local only",
+      "criteria": [],
+      "applyLinks": [
+        {
+          "label": "PIONEER-ALS study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/pioneer-als"
+        },
+        {
+          "label": "MND Association VTx-002 page — updated when a UK site is confirmed",
+          "url": "https://www.mndassociation.org/research/clinical-trials/treatment-trials/vtx-002"
+        },
+        {
+          "label": "Registry record NCT07287397",
+          "url": "https://clinicaltrials.gov/study/NCT07287397"
+        }
+      ],
+      "applyGuide": {
+        "order": 3,
+        "statusLine": "Sheffield recruiting its own patients only; King's College Hospital in set-up, opening soon",
+        "statusTone": "setup",
+        "reminder": "A one-off gene therapy injection into the fluid-filled space at the base of the brain. VTx-002 instructs nerve cells to make an antibody against TDP-43, the misfolded protein found in almost all MND. Now 36 people worldwide (up from 12), two dose levels, everyone gets the drug — there is no placebo. Follow-up runs up to five years.",
+        "fitNote": "The honest read: the UK criteria ask for first weakness no more than 18 months before the study and a seated slow vital capacity of at least 80%. With symptoms from June 2025, the onset window closes around December 2026 — very likely before King's opens to him. The 80% breathing threshold is also demanding. Now a long shot.",
+        "sections": [
+          {
+            "label": "Where",
+            "lines": [
+              "Sheffield (Royal Hallamshire) is open for its own local patients only. King's College Hospital (London) is in set-up and listed as opening soon.",
+              "Currently recruiting: Mass General Brigham (Boston), UC San Diego, Mayo Clinic Florida, University of Pennsylvania, and UMC Utrecht in the Netherlands. UZ Leuven in Belgium is also planned.",
+              "In September VectorY expanded the study from 12 to 36 participants, citing fast recruitment, and in November raised €74.5m to fund it through to final results. UK places will still be few."
+            ]
+          },
+          {
+            "label": "What it involves",
+            "lines": [
+              "A single injection into the cisterna magna at the base of the skull — a more involved procedure than a lumbar puncture, done under imaging.",
+              "No placebo group. Everyone enrolled receives one of the two dose levels.",
+              "Follow-up through clinic visits plus remote monitoring by phone and app, with safety data collected for up to five years. That five-year commitment is standard for gene therapies.",
+              "Secondary measures at 6 and 12 months: function score, breathing capacity, blood and spinal fluid markers."
+            ]
+          },
+          {
+            "label": "What they are looking for",
+            "lines": [
+              "Adults with ALS, first weakness no more than 18 months before the study, with no SOD1 or FUS gene fault.",
+              "Seated slow vital capacity of at least 80% predicted, and a TRICALS risk score between −6 and −2.",
+              "A caregiver or representative who can support him through the study.",
+              "Full criteria are on the registry record under NCT07287397.",
+              "With only 36 places, sites tend to enrol people they already know well."
+            ]
+          }
+        ],
+        "steps": [
+          "Ask his neurologist to register interest with the UK gene therapy trial network and to note PIONEER-ALS specifically. If a UK site opens, that referral list is where it will recruit from.",
+          "Watch the MND Association's VTx-002 page, which is updated whenever a UK site is confirmed.",
+          "Do not pursue an overseas site. Gene therapy trials require the participant to be local to the treating centre for years of follow-up, and travel funding is not offered.",
+          "If a UK site does open, expect to be asked for a recent breathing test and a clear date of first symptoms — worth having both on file."
+        ],
+        "timing": "Sheffield is open locally and King's is listed as opening soon. With his 18-month onset window closing around December 2026, this is unlikely to fit unless King's opens within weeks — the MND Association's VTx-002 page is the place to watch."
+      }
+    },
+    {
+      "id": "nura",
+      "name": "Nura Bio · NB-4746",
+      "kicker": "Drug trial · in set-up",
+      "type": "drug",
+      "phase": "Phase 1b/2",
+      "status": "setup",
+      "blurb": "Phase 1b/2 study of NB-4746 in ALS. Still in set-up in the UK, with Oxford, UCLH and Sheffield named as sites opening soon — Oxford is the nearest. The planned dates on the UK listing (June–October 2026) have passed without it opening, so timing is uncertain.",
+      "plain": "In plain terms: NB-4746 targets SARM1, an enzyme that acts as a self-destruct switch inside damaged nerve fibres. Blocking it is a genuinely new idea in MND, but this stage of testing is about safety and dose, not proof that it helps.",
+      "placeboLabel": "To be confirmed",
+      "site": "Oxford, UCLH or Sheffield — all opening soon",
+      "miles": 45,
+      "burden": "To be confirmed — includes lumbar punctures",
+      "apply": "Not yet open — ask his team to flag interest with Oxford",
+      "url": "https://www.mndcsg.org.uk/healthcare-research/studies/nura-bio-phase-1b2-study",
+      "windowLabel": "Opening date not confirmed",
+      "tlNote": "NB-4746 · Oxford, UCLH, Sheffield",
+      "barStart": 50,
+      "barWidth": 50,
+      "barLabel": "In set-up · opening date not confirmed",
+      "criteria": [
+        {
+          "text": "Aged 18–80",
+          "check": "age",
+          "min": 18,
+          "max": 80,
+          "blockedShort": "outside the age range"
+        },
+        {
+          "text": "Within 24 months of first symptoms (phase 2 part)",
+          "check": "months",
+          "max": 24,
+          "blockedShort": "beyond the 24-month window"
+        },
+        {
+          "text": "Slow vital capacity 60% or above",
+          "check": "fvc",
+          "min": 60
+        },
+        {
+          "text": "No tracheostomy or permanent ventilation",
+          "check": "nivAllow",
+          "allow": [
+            "none",
+            "night"
+          ]
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "Nura Bio study page",
+          "url": "https://www.mndcsg.org.uk/healthcare-research/studies/nura-bio-phase-1b2-study"
+        }
+      ]
+    },
+    {
+      "id": "primec",
+      "name": "PARAGON · PrimeC",
+      "kicker": "Drug trial · phase 3 · not yet enrolling",
+      "type": "drug",
+      "phase": "Phase 3",
+      "status": "setup",
+      "blurb": "Still not enrolling. In September 2026 NeuroSense revamped the whole plan: a restructured phase 3 with fewer participants and a shorter readout, favouring people early in the disease, plus a head-to-head study against Radicava. The changes are not finalised and need FDA sign-off. No UK site has ever been named. In November NeuroSense moved its Canadian approval filing from December 2026 to March 2027 to add new neurofilament data.",
+      "plain": "In plain terms: a twice-daily capsule combining two existing licensed drugs — ciprofloxacin (an antibiotic) and celecoxib (an anti-inflammatory) — at doses designed to work together against inflammation, iron build-up and faulty RNA handling in nerve cells. The phase 2b results are among the most encouraging in MND: functional decline slowed by roughly a third, a median survival gain of over a year, and it is the first drug reported to reduce TDP-43 in a placebo-controlled trial. Those results come from 68 people with a crossover design, so they need confirming — but this is a genuinely promising drug. The problem is access, not plausibility — and the plan keeps being redrawn, which pushes any UK involvement further out. The nearer-term route is Canada: the submission for approval is now targeted for March 2027 (moved from December 2026), and Health Canada's standard review takes about 300 days after acceptance — so a Canadian licence is unlikely before 2028.",
+      "placeboLabel": "Would be placebo-controlled",
+      "site": "No UK site — US and EU only",
+      "miles": null,
+      "burden": "Twice-daily capsules, 12 months, if a site ever opens",
+      "apply": "Nothing to apply to yet — no UK site",
+      "url": "https://clinicaltrials.gov/study/NCT06665165",
+      "tlNote": "Not enrolling · plan restructured Sep 2026",
+      "barStart": 55,
+      "barWidth": 45,
+      "barLabel": "Not enrolling · no UK site",
+      "criteria": [
+        {
+          "text": "A UK site open to recruitment",
+          "check": "blocked",
+          "note": "none named",
+          "blockedShort": "no UK site exists"
+        },
+        {
+          "text": "Trial actually enrolling",
+          "check": "blocked",
+          "note": "FDA-cleared, no start date",
+          "blockedShort": "not yet enrolling anywhere"
+        },
+        {
+          "text": "Aged 18–75",
+          "check": "age",
+          "min": 18,
+          "max": 75
+        },
+        {
+          "text": "Diagnosis of ALS",
+          "check": "always",
+          "note": "recorded as ALS"
+        }
+      ],
+      "applyLinks": [
+        {
+          "label": "PARAGON registry record",
+          "url": "https://clinicaltrials.gov/study/NCT06665165"
+        },
+        {
+          "label": "NeuroSense PrimeC programme page",
+          "url": "https://www.neurosense-tx.com/primec/"
+        },
+        {
+          "label": "PARADIGM phase 2b results in JAMA Neurology",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41837970/"
+        },
+        {
+          "label": "MND Association: treatment trials tracker",
+          "url": "https://www.mndassociation.org/research/clinical-trials/treatment-trials"
+        }
+      ]
+    }
+  ]
+}
